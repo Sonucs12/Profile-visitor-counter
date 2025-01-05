@@ -40,17 +40,17 @@ Copy code
 Setup Instructions
 1. Clone the Repository
 bash
-Copy code
+
 git clone https://github.com/your-username/portfolio-visitor-counter.git
 cd portfolio-visitor-counter
 
 
 2. Add Firebase Configuration
-markdown
-Copy code
+
 Go to the Firebase Console and create a new project. Set up Firestore Database: Navigate to Build > Firestore Database and create a database. Use Production Mode for real-time access. Create a collection named counters and add a document: Document ID: visitorCount Field Name: count Field Type: Number Field Value: 0 Copy your Firebase configuration from Project Settings > General > Your Apps.
 3. Replace Firebase Config in Code
-javascript
+
+
 ![Screenshot 2025-01-05 142629](https://github.com/user-attachments/assets/b2cb7d08-737d-4796-8d7f-240674d7e139)
 
 4. Run the Project
@@ -64,17 +64,7 @@ Copy code
 - Refresh the page and observe the counter incrementing.
 - Check the Firestore Database to verify the count updates.
 Troubleshooting
-Error: Visitor count not loading
-json
-Copy code
-{
-  "rules": {
-    ".read": "true",
-    ".write": "true"
-  }
-}
-markdown
-Copy code
+
 Go to Firebase Console > Firestore Database > Rules and ensure the read and write rules are set to true:
 Save and publish the changes.
 
