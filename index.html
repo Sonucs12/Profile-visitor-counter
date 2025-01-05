@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio Visitor Counter</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+  <section class="hero-section">
+    <div class="hero-content">
+      <h1>Welcome to My Portfolio</h1>
+      <p>I'm Sonu Kumar, a web developer passionate about creating awesome web experiences.</p>
+      <div class="visitor-counter">
+        <i class="fa-solid fa-user"></i>
+        <h2>Profile Visitors</h2>
+        <span id="visitorCount"><i class="fa-solid fa-spinner fa-spin-pulse"></i>Loading...</span>
+      </div>
+    </div>
+  </section>
+
+  <script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-app.js";
+    import { getFirestore, doc, getDoc, setDoc, updateDoc, increment } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-firestore.js";
+
+   // Your web app's Firebase configuration
+const firebaseConfig = {
+  apiKey: "AIzaSyBsWtS7NX7h9tSwThqq9eXVEOG-1hBITIk",
+  authDomain: "visitor-counter-7dde1.firebaseapp.com",
+  projectId: "visitor-counter-7dde1",
+  storageBucket: "visitor-counter-7dde1.firebasestorage.app",
+  messagingSenderId: "483060199275",
+  appId: "1:483060199275:web:cb7440bc3c1398e213a62e"
+};
+
+
+
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+
+    // Initialize Firestore
+    const db = getFirestore(app);
+
+    // Visitor Counter Logic
+    const counterRef = doc(db, 'counters', 'visitorCount');
+
+    // Increment Counter on Load
+    getDoc(counterRef).then((docSnap) => {
+      const visitorCountElement = document.getElementById('visitorCount'); //this is the id where you want to show the count
+      if (docSnap.exists()) {
+        const count = docSnap.data().count;
+        visitorCountElement.innerText = count; // Display the count
+        updateDoc(counterRef, {
+          count: increment(1) // Increment the count
+        });
+      } else {
+        setDoc(counterRef, { count: 1 }); // Initialize the count if it doesn't exist
+        visitorCountElement.innerText = 1;
+      }
+      // Remove spinner after loading
+      visitorCountElement.innerHTML = visitorCountElement.innerText;
+    }).catch((error) => {
+      console.error("Error accessing Firestore: ", error);
+      document.getElementById('visitorCount').innerText = "Error loading visitor count.";
+    });
+  </script>
+</body>
+</html>
