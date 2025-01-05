@@ -4,8 +4,8 @@ A simple, elegant visitor counter for your portfolio website, powered by Firebas
 
 ---
 
-## **Features**
-```markdown
+Features
+markdown
 - Tracks and updates visitor count in real-time.
 - Displays visitor count on the webpage.
 - Easy integration with Firebase Firestore.
@@ -29,7 +29,6 @@ A simple, elegant visitor counter for your portfolio website, powered by Firebas
 ---
 
 ## **Features**
-```markdown
 - Tracks and updates visitor count in real-time.
 - Displays visitor count on the webpage.
 - Easy integration with Firebase Firestore.
@@ -87,25 +86,4 @@ Go to Firebase Console > Firestore Database > Rules and ensure the read and writ
 Save and publish the changes.
 
 Still facing issues? Check the browser console for error messages using Inspect > Console.
-Demo
-markdown
-Copy code
-Check out the live demo of this project here.
-Resources
-markdown
-Copy code
-YouTube Tutorial: CodingSuno YouTube Channel
-GitHub Profile: Sonu Kumar GitHub
-LinkedIn Profile: Sonu Kumar LinkedIn
-Portfolio: Portfolio Website
-License
-markdown
-Copy code
-This project is open-source under the MIT License.
-Contribute
-markdown
-Copy code
-If you find any bugs or have suggestions, feel free to open an issue or make a pull request.
-markdown
-Copy code
-Happy Coding! 😊
+
