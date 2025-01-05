@@ -51,15 +51,8 @@ Copy code
 Go to the Firebase Console and create a new project. Set up Firestore Database: Navigate to Build > Firestore Database and create a database. Use Production Mode for real-time access. Create a collection named counters and add a document: Document ID: visitorCount Field Name: count Field Type: Number Field Value: 0 Copy your Firebase configuration from Project Settings > General > Your Apps.
 3. Replace Firebase Config in Code
 javascript
-Copy code
-const firebaseConfig = {
-  apiKey: "YOUR_API_KEY",
-  authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
-  projectId: "YOUR_PROJECT_ID",
-  storageBucket: "YOUR_STORAGE_BUCKET",
-  messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
-  appId: "YOUR_APP_ID"
-};
+![Screenshot 2025-01-05 142629](https://github.com/user-attachments/assets/b2cb7d08-737d-4796-8d7f-240674d7e139)
+
 4. Run the Project
 markdown
 Copy code
